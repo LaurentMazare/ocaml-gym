@@ -1,0 +1,3 @@
+(executables
+  (names random)
+  (libraries base gym stdio))

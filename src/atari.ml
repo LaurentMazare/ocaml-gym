@@ -18,7 +18,7 @@ let create str =
 let to_bigarray t np_array =
   let np_array = t.np $. String "ascontiguousarray" $ [ Ptr np_array ] in
   let np_array = np_array $. String "astype" $ [ Ptr (t.np $. String "float32") ] in
-  Numpy.numpy_to_bigarray np_array Float32
+  Numpy.to_bigarray np_array Float32
 
 let reset t =
   t.env $. String "reset" $ []

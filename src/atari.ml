@@ -38,3 +38,7 @@ let step t ~action =
   ; reward = Object.to_float reward
   ; is_done = Object.to_bool is_done
   }
+
+let actions t =
+  let actions = t.env $. String "unwrapped" $. String "get_action_meanings" $ [] in
+  Object.to_list Object.to_string actions

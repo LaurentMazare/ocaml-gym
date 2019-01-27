@@ -24,6 +24,9 @@ let reset t =
   t.env $. String "reset" $ []
   |> to_bigarray t
 
+let render t =
+  ignore (t.env $. String "render" $ [] : pyobject)
+
 let step t ~action =
   let v = t.env $. String "step" $ [ Int action ] in
   let obs, reward, is_done =

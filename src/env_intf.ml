@@ -6,4 +6,5 @@ module type S = sig
   val create : string -> t
   val reset : t -> obs
   val step : t -> action:action -> obs Step.t
+  val render : t -> unit
 end
